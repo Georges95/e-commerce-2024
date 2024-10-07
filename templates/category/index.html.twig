@@ -6,6 +6,8 @@
 
 <div class="container">
     <br><br>
+    {% include 'layouts/_flash_message.html.twig' %}
+
     <h1>Categories</h1>
     <br><br>
     <table class="table">
@@ -19,8 +21,8 @@
 			<td>{{ category.id }}</td>
 			<td>{{ category.name }}</td>
 			<td>
-				<a href="{{ path ('app_category_update', {'id':category.id}) }}">Modifier</a>|
-                <a href="{{ path ('app_category_delete', {'id':category.id}) }}">Supprimer</a>
+				<a href="{{ path('app_category_update', {'id':category.id}) }}">Modifier</a>|
+                <a href="{{ path('app_category_delete', {'id':category.id}) }}" class="text-danger">Supprimer</a>
 			</td>
 		</tr>
 	{% else %}
